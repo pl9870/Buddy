@@ -4,11 +4,15 @@ public class Subset extends Pattern
 {
   //should measure how close of a subset something is, 0 means complete match, closer matches to 0 are better matches
   private double subScore; 
+  private boolean derived;
   
-  public Subset(Thing child, Thing parent, ArrayList<Exc> c, double subScore)
+  public Subset(Thing child, Thing parent, ArrayList<Exc> c, double subScore, boolean derived)
   {
     super(child,parent,c);
-    Variables.addSubsetPattern(this);
+    this.subScore = subScore;
+    this.derived = derived;
+    if(derived == false)
+      Variables.addSubsetPattern(this);
     autoAdd();
   }
   
@@ -17,7 +21,7 @@ public class Subset extends Pattern
     //if the parent is in the subset, then naturally
     for(int i = 0; i < Variables.getSubsetPatterns().size(); i++) {
       if(Variables.getSubsetPatterns().get(i).getChild().toString().equals(getParent().toString())) {
-          Variables.getSubsetPatterns().add(new Subset(getChild(), Variables.getSubsetPatterns().get(i).getParent(), null, subScore +1));
+          Variables.getSubsetPatterns().add(new Subset(getChild(), Variables.getSubsetPatterns().get(i).getParent(), null, subScore +1, true));
       }
       //fix the duplciation error
     }
@@ -35,6 +39,6 @@ public class Subset extends Pattern
 
   public String toString()
   {
-    return getChild().toString() + " is a subset of " + getParent().toString();
+    return "(C:" + getChild().toString() + ",P:" + getParent().toString() + ",Sc:" + subScore + ",Der:" + derived + ")";
   }
 }
