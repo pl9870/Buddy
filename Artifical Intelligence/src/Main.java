@@ -3,10 +3,13 @@ public class Main
 {
   public static void main(String[] args)
   {
-    Data x = new Data("How is Kobe Bryant?");
-    Thing[] arr = x.findThingCombos();
-    for(int i = 0; i < arr.length; i++)
-      System.out.println(arr[i]);
+    Thing a = new Thing("Kobe");
+    Thing b = new Thing("Bryant");
+    Thing c = new Thing("Cats");
+    Pattern y = new Subset(b,c,null,0.0);
+    Pattern x = new Subset(a,b,null,0.0);
+    System.out.println(Variables.getSubsetPatterns());
+
   }
   
   

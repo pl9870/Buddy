@@ -12,4 +12,19 @@ public abstract class Pattern
     this.b = b;
     this.c = c;
   }
+  
+  public Thing getA()
+  {
+    return a;
+  }
+  
+  public Thing getB()
+  {
+    return b;
+  }
+  
+  public ArrayList<Exc> getC()
+  {
+    return c;
+  }
 }
