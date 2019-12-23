@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Bucket
-{
+{  
   private Thing a;
   private Thing b;
   private ArrayList<Pattern> c;
