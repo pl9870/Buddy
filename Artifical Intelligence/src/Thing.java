@@ -12,5 +12,10 @@ public class Thing
   {
     return characters;
   }
+  
+  public String toString()
+  {
+    return characters;
+  }
 
 }
