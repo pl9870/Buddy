@@ -6,8 +6,8 @@ public class Main
     Thing a = new Thing("Kobe");
     Thing b = new Thing("Bryant");
     Thing c = new Thing("Cats");
-    Pattern y = new Subset(b,c,null,0.0, false);
-    Pattern x = new Subset(a,b,null,0.0, false);
+    Pattern y = new Subset(b,c,null, 3.0, false);
+    Pattern x = new Subset(a,b,null,4.0, false);
     System.out.println(Variables.getSubsetPatterns());
 
   }

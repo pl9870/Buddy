@@ -6,6 +6,7 @@ public class Subset extends Pattern
   private double subScore; 
   private boolean derived;
   
+  //only relates ideas not words
   public Subset(Thing child, Thing parent, ArrayList<Exc> c, double subScore, boolean derived)
   {
     super(child,parent,c);
@@ -21,10 +22,14 @@ public class Subset extends Pattern
     //if the parent is in the subset, then naturally
     for(int i = 0; i < Variables.getSubsetPatterns().size(); i++) {
       if(Variables.getSubsetPatterns().get(i).getChild().toString().equals(getParent().toString())) {
-          Variables.getSubsetPatterns().add(new Subset(getChild(), Variables.getSubsetPatterns().get(i).getParent(), null, subScore +1, true));
+          Variables.getSubsetPatterns().add(new Subset(getChild(), Variables.getSubsetPatterns().get(i).getParent(), null, subScore + Variables.getSubsetPatterns().get(i).getSubScore(), true));
       }
-      //fix the duplciation error
     }
+  }
+  
+  public double getSubScore()
+  {
+    return subScore;
   }
   
   public Thing getParent() //just here instead of b to clarify

@@ -15,5 +15,10 @@ public class Variables
   {
     return allSubsetPatterns;
   }
+  
+  public static void save()
+  {
+    
+  }
 
 }
