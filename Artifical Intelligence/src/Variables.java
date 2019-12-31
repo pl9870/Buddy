@@ -16,6 +16,16 @@ public class Variables
     return allSubsetPatterns;
   }
   
+  public static boolean isSubset(Thing child, Thing parent)
+  {
+    for(int i = 0; i < allSubsetPatterns.size(); i++) {
+      if(allSubsetPatterns.get(i).getChild() == child && allSubsetPatterns.get(i).getParent() == parent) {
+        return true;
+      }
+    }
+    return false;
+  }
+  
   public static void save()
   {
     

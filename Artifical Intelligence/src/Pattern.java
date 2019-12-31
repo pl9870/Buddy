@@ -6,6 +6,13 @@ public abstract class Pattern
   private Thing b;
   private ArrayList<Exc> c;
   private ArrayList<Thing> d;
+  private Data e;
+  
+  public Pattern(Data e)
+  {
+    this.e = e;
+  }
+  
   
   public Pattern(ArrayList<Thing> d, Thing b, ArrayList<Exc> c)
   {
@@ -39,5 +46,10 @@ public abstract class Pattern
   public ArrayList<Thing> getD()
   {
     return d;
+  }
+  
+  public Data getE()
+  {
+    return e;
   }
 }

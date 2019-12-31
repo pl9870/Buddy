@@ -26,7 +26,7 @@ public class Subset extends Pattern
       }
     }
   }
-  
+
   public double getSubScore()
   {
     return subScore;

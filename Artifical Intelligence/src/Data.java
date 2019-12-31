@@ -23,4 +23,9 @@ public class Data
     } 
     return arr;
   }
+  
+  public String getData()
+  {
+    return data;
+  }
 }

@@ -17,5 +17,20 @@ public class Thing
   {
     return characters;
   }
+  
+  public boolean isWord()
+  {
+    if(characters.substring(0,2).equals("!~")) {
+      return true;
+    }
+    return false;
+  }
+  
+  public boolean isGroup()
+  {
+    return !isWord();
+  }
+  
+  
 
 }
