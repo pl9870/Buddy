@@ -16,7 +16,8 @@ public class Subset extends Pattern
       Variables.addSubsetPattern(this);
     autoAdd();
   }
-  
+  //-1 means not a subset
+  //strong is less than equal 5
   public void autoAdd()
   {
     //if the parent is in the subset, then naturally

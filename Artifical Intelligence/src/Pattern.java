@@ -13,11 +13,9 @@ public abstract class Pattern
     this.e = e;
   }
   
-  
-  public Pattern(ArrayList<Thing> d, Thing b, ArrayList<Exc> c)
+  public Pattern(ArrayList<Thing> d, ArrayList<Exc> c)
   {
     this.d = d;
-    this.b = b;
     this.c = c;
   }
   
